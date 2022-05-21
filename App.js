@@ -1,4 +1,4 @@
-import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 export const Button = ({ title }) => {
   return (
@@ -6,50 +6,18 @@ export const Button = ({ title }) => {
         <View style={{backgroundColor: 'blue', padding: 10, alignItems: 'center', marginTop: 20}}>
           <Text style={{color: 'white'}}>{title}</Text>
         </View>
-      </Pressable>
+    </Pressable>
   )
 }
 
 export default function App() {
   return (
-    <View>
-      <ScrollView>
-        <View style={{ height: 60, backgroundColor: 'blue' }}>
-          <Text>This is a Text</Text>
-        </View>
-
-        <View style={{ height: 60, backgroundColor: 'green' }}>
-          <Text 
-            style={{ 
-              fontSize: 24,
-              color: 'white', 
-              fontWeight: 'bold', 
-              padding: 10, 
-            }}
-          >
-              This is another Text
-          </Text>
-        </View>
-
-        <View style={{marginTop: 50, marginLeft: 40}}>
-          <Image 
-            style={{height: 180, width: 200}} 
-            source={require('./assets/favicon.png')} 
-            resizeMode="contain"
-          />
-        </View>
-
-        <View style={{marginTop: 50, marginLeft: 40}}>
-          <Image 
-            style={{height: 180, width: 200}} 
-            source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png' }} 
-            resizeMode="contain"
-          />
-        </View>
-
-        <Button title="Press" />
-        <Button title="2nd Title" />
-      </ScrollView>
+    <View style={{ flex: 1,  flexDirection: 'row', flexWrap: 'wrap' }}>
+      <View style={styles.view1} />
+      <View style={styles.view2} />
+      <View style={styles.view3} /> 
+      <View style={styles.view4} /> 
+      <View style={styles.view5} /> 
     </View>
   );
 }
@@ -57,5 +25,31 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     
+  },
+  view1: {
+    height: 100,
+    width: 100,
+    backgroundColor: 'red',
+  },
+  view2: {
+    height: 100,
+    width: 100,
+    backgroundColor: 'blue',
+    alignSelf: 'flex-start', // align self is the most priority
+  },
+  view3: {
+    height: 100,
+    width: 100,
+    backgroundColor: 'green'
+  },
+  view4: {
+    height: 100,
+    width: 100,
+    backgroundColor: 'orange'
+  },
+  view5: {
+    height: 100,
+    width: 100,
+    backgroundColor: 'black'
   },
 });
