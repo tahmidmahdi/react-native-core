@@ -23,9 +23,6 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    
-  },
   view1: {
     height: 100,
     width: 100,
